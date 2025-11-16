@@ -1,0 +1,1307 @@
+/* ==================================== */
+/* 0. VARIÁVEIS E CONFIGURAÇÕES GERAIS */
+/* ==================================== */
+
+/* Cores do Tema Cyberpunk/Neon */
+:root {
+    --bg-dark: #0A0A1F; /* Fundo muito escuro, quase preto-azulado */
+    --bg-medium: #14143D; /* Fundo de seção/card */
+    --neon-blue: #00BCD4; /* Azul Elétrico Principal */
+    --neon-magenta: #FF0090; /* Magenta de Destaque */
+    --text-light: #F0F0F0; /* Texto principal claro */
+    --text-medium: #AFAFB0; /* Texto secundário */
+    --font-principal: 'Orbitron', sans-serif; /* Fonte futurista para títulos */
+    --font-secundaria: 'Roboto', sans-serif; /* Fonte legível para corpo */
+}
+
+/* Importação de Fontes (usando Google Fonts como exemplo) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Roboto:wght@300;400;700&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-secundaria);
+    line-height: 1.6;
+}
+
+/* Classes de Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==================================== */
+/* 1. EFEITOS NEON E TIPOGRAFIA */
+/* ==================================== */
+
+h1, h2, h3, h4 {
+    font-family: var(--font-principal);
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+}
+
+/* Título Principal com Brilho Neon */
+.logo-neon, .title-neon {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue);
+}
+
+.title-section {
+    font-size: 2em;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 3px var(--neon-magenta);
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+}
+
+/* ==================================== */
+/* 2. BOTÕES (CTAS) */
+/* ==================================== */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botão Primário (Live / Destaque) */
+.btn-primary {
+    background-color: var(--neon-magenta);
+    color: var(--bg-dark);
+}
+
+.btn-primary:hover {
+    background-color: var(--neon-magenta);
+    box-shadow: 0 0 15px var(--neon-magenta);
+    transform: scale(1.05);
+}
+
+/* Botão com Efeito Neon (Azul) */
+.neon-effect-btn {
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+}
+
+.neon-effect-btn:hover {
+    background-color: rgba(0, 188, 212, 0.1);
+    box-shadow: 0 0 15px var(--neon-blue), 0 0 25px rgba(0, 188, 212, 0.5);
+}
+
+/* Botões de Contato (WhatsApp e Email) */
+.btn-whatsapp {
+    background-color: #25D366; /* Verde WhatsApp */
+    color: white;
+    margin-right: 15px;
+}
+.btn-whatsapp:hover {
+    background-color: #128C7E;
+}
+.btn-email {
+    background-color: var(--bg-medium);
+    border: 1px solid var(--text-medium);
+    color: var(--text-light);
+}
+.btn-email:hover {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--neon-blue);
+}
+
+
+/* ==================================== */
+/* 3. CABEÇALHO E NAVEGAÇÃO */
+/* ==================================== */
+
+#header-principal {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid var(--bg-medium);
+    padding: 15px 0;
+}
+
+#header-principal .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu-principal ul {
+    list-style: none;
+    display: flex;
+}
+
+#menu-principal a {
+    text-decoration: none;
+    color: var(--text-light);
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+#menu-principal a:hover,
+#menu-principal a.active {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+    border-bottom: 2px solid var(--neon-blue);
+}
+
+#menu-hamburguer {
+    display: none; /* Esconde no desktop */
+}
+
+/* ==================================== */
+/* 4. SEÇÕES E CONTEÚDO PRINCIPAL */
+/* ==================================== */
+
+.section-pad {
+    padding: 60px 0;
+}
+.bg-dark-alt {
+    background-color: var(--bg-medium);
+}
+
+/* HERO BANNER (Chamada para Live) */
+#hero-banner {
+    padding: 120px 0;
+    background: url('../img/background-hero.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+#hero-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 31, 0.7); /* Overlay escuro */
+}
+#hero-banner .container {
+    position: relative;
+    z-index: 10;
+}
+
+.live-status {
+    background-color: var(--neon-magenta);
+    color: var(--bg-dark);
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite;
+}
+
+/* Animação Neon de Pulsação */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 144, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 0, 144, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 144, 0); }
+}
+
+/* Grid Básico para os Cards (Clips/Notícias) */
+.clips-grid, .noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.clip-card, .noticia-card {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--bg-medium);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.clip-card:hover, .noticia-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--neon-blue);
+    box-shadow: 0 5px 15px rgba(0, 188, 212, 0.2);
+}
+
+.placeholder {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed var(--text-medium);
+    opacity: 0.6;
+}
+
+/* ==================================== */
+/* 5. RODAPÉ (FOOTER) */
+/* ==================================== */
+
+#footer-principal {
+    background-color: #000000;
+    padding: 40px 0 20px 0;
+    border-top: 5px solid var(--neon-magenta); /* Linha de divisão neon */
+}
+
+.contact-sales-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.neon-divider {
+    border: none;
+    height: 1px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 5px var(--neon-blue);
+    margin: 30px 0;
+    opacity: 0.3;
+}
+
+.social-links, .parcerias {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: var(--text-light);
+    margin: 0 10px;
+    font-size: 0.9em;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid var(--bg-medium);
+    border-radius: 5px;
+}
+.social-icon:hover {
+    color: var(--neon-magenta);
+    border-color: var(--neon-magenta);
+    text-shadow: 0 0 3px var(--neon-magenta);
+}
+
+.parceria-logo {
+    display: inline-block;
+    width: 120px;
+    height: 60px;
+    margin: 10px;
+    /* Placeholder para logo de parceiros */
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.8em;
+    color: var(--text-medium);
+    margin-top: 20px;
+}
+
+/* ==================================== */
+/* 6. RESPONSIVIDADE BÁSICA */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    #menu-principal {
+        display: none; /* Esconde o menu no mobile */
+    }
+    #menu-hamburguer {
+        display: block; /* Mostra o ícone no mobile */
+        background: transparent;
+        color: var(--neon-blue);
+        border: none;
+        font-size: 1.5em;
+    }
+    #header-principal .container {
+        flex-direction: row;
+    }
+
+    /* Ajuste de grids no mobile */
+    .clips-grid, .noticias-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 7. ESTILOS DO MENU HAMBURGUER (JS) */
+/* ==================================== */
+#menu-hamburguer {
+    /* Cor e tamanho já definidos no media query anterior */
+    z-index: 101; 
+    cursor: pointer;
+    font-size: 1.8em;
+    padding: 5px 10px;
+}
+
+/* No mobile, o menu-principal deve ser um overlay */
+@media (max-width: 900px) {
+    #menu-principal {
+        position: absolute;
+        top: 65px; /* Altura do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-dark);
+        border-top: 2px solid var(--neon-magenta);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    #menu-principal ul {
+        flex-direction: column; /* Faz os links ficarem em coluna */
+        padding: 10px 0;
+    }
+
+    #menu-principal li {
+        width: 100%; /* Faz o link ocupar toda a largura */
+        border-bottom: 1px solid var(--bg-medium);
+    }
+    
+    #menu-principal a {
+        padding: 15px 20px;
+        text-align: left;
+    }
+}
+
+
+/* ==================================== */
+/* 8. BOTÃO VOLTAR AO TOPO/VOLTAR (JS) */
+/* ==================================== */
+
+.btn-back-to-top {
+    display: none; /* Escondido por padrão, mostrado pelo JS */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 90;
+    width: 50px;
+    height: 50px;
+    background-color: var(--neon-blue);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 50%;
+    font-size: 2em;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--neon-blue);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-back-to-top:hover {
+    background-color: var(--neon-magenta);
+    box-shadow: 0 0 20px var(--neon-magenta);
+    transform: scale(1.1);
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 9. ESTILOS DA LOJA EXCLUSIVA (LOJA.HTML) */
+/* ==================================== */
+
+/* Layout principal com Sidebar e Conteúdo (Usando CSS Grid) */
+.loja-layout {
+    display: grid;
+    /* Define duas colunas: 25% para a sidebar e 75% para os produtos */
+    grid-template-columns: 1fr 3fr; 
+    gap: 40px;
+}
+
+.sidebar-filtros {
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content; /* Para não ocupar a altura total da seção */
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+.sidebar-filtros select,
+.sidebar-filtros input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--bg-medium);
+    border-radius: 4px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    appearance: none; /* Reset nativo */
+}
+
+.sidebar-filtros input[type="range"] {
+    height: 5px;
+    background: var(--bg-medium);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Grid de Produtos */
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.produto-card {
+    background-color: var(--bg-medium);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--bg-medium);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.produto-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+}
+
+.produto-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.item-title {
+    color: var(--text-light);
+    font-size: 1.2em;
+    margin: 10px 0 5px 0;
+}
+
+.item-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.item-desc {
+    color: var(--text-medium);
+    font-size: 0.9em;
+    height: 40px; /* Altura fixa para alinhar botões */
+}
+
+/* ==================================== */
+/* 10. RESPONSIVIDADE DA LOJA */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .loja-layout {
+        /* No mobile, a sidebar fica em cima, ocupando a largura total */
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-filtros {
+        order: -1; /* Força a sidebar para o topo */
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 11. ESTILOS DA COMUNIDADE (COMUNIDADE.HTML) */
+/* ==================================== */
+
+/* Layout principal: 2 Colunas */
+.comunidade-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para o Discord, 1/3 para Regras */
+    gap: 40px;
+    align-items: start; /* Alinha o conteúdo ao topo */
+}
+
+/* Estilo do Widget Discord */
+.discord-widget {
+    padding: 20px;
+    background-color: var(--bg-medium);
+    border-radius: 8px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+.discord-widget iframe {
+    /* Garante que o iframe tenha bordas com o estilo do site */
+    border-radius: 4px;
+    margin-top: 15px;
+}
+
+.regras-mural {
+    padding: 20px;
+    background-color: var(--bg-medium);
+    border-radius: 8px;
+    border: 1px solid var(--neon-magenta);
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.3);
+}
+
+.mural-message {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--neon-blue);
+}
+
+.mural-message h4 {
+    color: var(--neon-blue);
+    font-size: 1.1em;
+}
+
+.regras-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.regras-list li {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-bottom: 1px dashed var(--bg-dark);
+}
+
+.regras-list li::before {
+    content: '→'; /* Adiciona uma seta neon como bullet */
+    color: var(--neon-magenta);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    margin-right: 0.5em;
+}
+
+/* ==================================== */
+/* 12. RESPONSIVIDADE DA COMUNIDADE */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .comunidade-layout {
+        /* No mobile, as colunas viram linhas */
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 13. ESTILOS DE EVENTOS E SORTEIOS (EVENTOS.HTML) */
+/* ==================================== */
+
+/* Grid de Próximos Eventos */
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.evento-card {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--neon-blue);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.evento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
+}
+
+.evento-img {
+    width: 180px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.evento-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.evento-info h4 {
+    color: var(--neon-magenta);
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+.data-evento {
+    color: var(--neon-blue);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+.evento-desc {
+    color: var(--text-medium);
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+/* Sorteio Ativo (Destaque) */
+.sorteio-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--bg-dark);
+    padding: 30px;
+    border-radius: 12px;
+    border: 3px solid var(--neon-magenta);
+    box-shadow: 0 0 25px rgba(255, 0, 144, 0.5);
+    margin-top: 40px;
+}
+
+.sorteio-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.sorteio-info {
+    max-width: 500px;
+    text-align: center;
+}
+
+.large-text {
+    font-size: 3.5em;
+    font-family: var(--font-principal);
+    line-height: 1.2;
+    margin: 5px 0 15px 0;
+}
+
+.small-text {
+    color: var(--text-medium);
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+/* Tabela de Ganhadores */
+.tabela-ganhadores {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: var(--font-secundaria);
+}
+
+.tabela-ganhadores th, .tabela-ganhadores td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--bg-medium);
+}
+
+.tabela-ganhadores th {
+    background-color: var(--bg-medium);
+    color: var(--neon-blue);
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.status-entregue {
+    color: #4CAF50; /* Verde */
+    font-weight: bold;
+}
+
+.status-pendente {
+    color: #FFC107; /* Amarelo */
+    font-weight: bold;
+}
+
+/* ==================================== */
+/* 14. RESPONSIVIDADE DE EVENTOS */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .eventos-grid {
+        grid-template-columns: 1fr;
+    }
+    .evento-card {
+        flex-direction: column; /* Coloca a imagem em cima do texto no mobile */
+        text-align: center;
+    }
+    .evento-img {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+    .sorteio-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    .large-text {
+        font-size: 2.5em; /* Reduz o texto grande */
+    }
+    .tabela-ganhadores thead {
+        /* Oculta o cabeçalho no mobile */
+        display: none;
+    }
+    .tabela-ganhadores tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid var(--bg-medium);
+        border-radius: 8px;
+    }
+    .tabela-ganhadores td {
+        display: block;
+        text-align: right;
+        border-bottom: 1px dashed var(--bg-medium);
+    }
+    .tabela-ganhadores td::before {
+        /* Adiciona o rótulo da coluna antes do conteúdo */
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        color: var(--neon-blue);
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 15. ESTILOS DA GALERIA DE CLIPS (GAMEPLAY.HTML) */
+/* ==================================== */
+
+.clip-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.clip-item {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--bg-medium);
+}
+
+.clip-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+    border-color: var(--neon-magenta);
+}
+
+.clip-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.clip-details {
+    padding: 15px;
+    text-align: left;
+}
+
+.clip-title {
+    color: var(--neon-blue);
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.clip-game {
+    color: var(--text-medium);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* Botão Secundário para Links (menor) */
+.btn-secondary.small {
+    padding: 8px 15px;
+    font-size: 0.8em;
+    background-color: var(--neon-blue);
+    color: var(--bg-dark);
+}
+
+/* Formulário de Envio de Clips */
+.clip-submission-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: left;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+}
+
+.clip-submission-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: var(--neon-magenta);
+    font-weight: bold;
+}
+
+.clip-submission-form input,
+.clip-submission-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--bg-medium);
+    border-radius: 4px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+/* ==================================== */
+/* 16. RESPONSIVIDADE DE GAMEPLAY */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .clip-gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 17. ESTILOS DE NOTÍCIAS (NOTICIAS.HTML) */
+/* ==================================== */
+
+/* Layout principal: Sidebar e Lista de Artigos */
+.blog-layout {
+    display: grid;
+    /* 3/4 para o conteúdo principal, 1/4 para a sidebar */
+    grid-template-columns: 3fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Sidebar de Notícias (Filtros e Populares) */
+.sidebar-noticias {
+    padding: 20px;
+    border-radius: 8px;
+    height: fit-content;
+    border: 1px solid var(--neon-magenta);
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.3);
+}
+
+.small-title {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.search-input,
+#categoria-noticia {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--bg-medium);
+    border-radius: 4px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.popular-posts-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.popular-posts-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--bg-medium);
+}
+
+.popular-posts-list a {
+    color: var(--text-medium);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.popular-posts-list a:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 3px var(--neon-blue);
+}
+
+/* Estilo do Card de Artigo */
+.artigo-card {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.artigo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.artigo-card.destaque {
+    border: 2px solid var(--neon-blue);
+    margin-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+}
+
+.artigo-thumb {
+    width: 250px; /* Largura fixa para a imagem */
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+.artigo-info {
+    padding: 20px;
+}
+
+.artigo-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.tag-neon-blue {
+    background-color: var(--neon-blue);
+    color: var(--bg-dark);
+}
+
+.tag-neon-magenta {
+    background-color: var(--neon-magenta);
+    color: var(--bg-dark);
+}
+
+.artigo-title a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s;
+}
+
+.artigo-title a:hover {
+    color: var(--neon-magenta);
+}
+
+.artigo-meta {
+    color: var(--text-medium);
+    font-size: 0.85em;
+    margin-bottom: 15px;
+}
+
+.artigo-excerpt {
+    color: var(--text-medium);
+    margin-bottom: 20px;
+}
+
+/* Paginação */
+.paginacao {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--bg-medium);
+}
+
+.page-number {
+    color: var(--text-medium);
+    margin: 0 15px;
+}
+
+/* ==================================== */
+/* 18. RESPONSIVIDADE DE NOTÍCIAS */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-noticias {
+        order: -1; /* Sidebar no topo */
+    }
+    .artigo-card {
+        flex-direction: column; /* Coloca a imagem em cima do texto */
+    }
+    .artigo-thumb {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 19. ESTILOS DE CANAIS OFICIAIS (CANAIS.HTML) */
+/* ==================================== */
+
+/* Grid de Canais Oficiais */
+.canais-oficiais-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.canal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    width: 250px;
+    height: 80px;
+    border-radius: 8px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.canal-btn .icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+}
+
+/* Cores específicas para cada canal */
+.canal-btn.youtube {
+    background-color: #FF0000;
+    color: white;
+    border-color: #FF0000;
+}
+.canal-btn.youtube:hover {
+    box-shadow: 0 0 20px #FF0000;
+    transform: scale(1.05);
+}
+
+.canal-btn.twitch {
+    background-color: #6441A4;
+    color: white;
+    border-color: #6441A4;
+}
+.canal-btn.twitch:hover {
+    box-shadow: 0 0 20px #6441A4;
+    transform: scale(1.05);
+}
+
+.canal-btn.tiktok {
+    background-color: #69C9D0; /* Azul claro do TikTok */
+    color: black;
+    border-color: #69C9D0;
+}
+.canal-btn.tiktok:hover {
+    box-shadow: 0 0 20px #69C9D0;
+    transform: scale(1.05);
+}
+
+.canal-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888, #9c27b0);
+    color: white;
+    border: none;
+}
+.canal-btn.instagram:hover {
+    box-shadow: 0 0 20px #dc2743;
+    transform: scale(1.05);
+}
+
+/* Grid de Parceiros */
+.parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.parceiro-card {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--neon-blue);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.parceiro-card:hover {
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    transform: translateY(-5px);
+}
+
+.parceiro-logo {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.parceiro-name {
+    color: var(--neon-magenta);
+    font-size: 1.4em;
+    margin-top: 10px;
+}
+
+.parceiro-desc {
+    color: var(--text-medium);
+    margin-bottom: 20px;
+}
+
+/* ==================================== */
+/* 20. RESPONSIVIDADE DE CANAIS */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .canais-oficiais-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .canal-btn {
+        width: 100%;
+        max-width: 350px;
+    }
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 21. ESTILOS DE CONTATO (CONTATO.HTML) */
+/* ==================================== */
+
+/* Layout de Contato (2 Colunas) */
+.contato-layout {
+    display: grid;
+    /* 1/3 para métodos diretos, 2/3 para o formulário */
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Informações de Contato */
+.contact-methods {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--neon-magenta);
+    box-shadow: 0 0 10px rgba(255, 0, 144, 0.3);
+    height: fit-content;
+}
+
+.contact-box {
+    margin-bottom: 25px;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px dashed var(--bg-medium);
+}
+
+.whatsapp-box {
+    border-left: 5px solid #25D366;
+}
+
+.email-box {
+    border-left: 5px solid var(--neon-blue);
+}
+
+.full-width-btn {
+    width: 100%;
+    margin: 10px 0 5px 0;
+}
+
+/* Formulário de Contato */
+.contact-form {
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 188, 212, 0.3);
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: var(--neon-blue);
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--bg-medium);
+    border-radius: 4px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-secundaria);
+}
+
+/* Garante que o botão Neon no formulário use as cores corretas */
+.contact-form .neon-effect-btn {
+    background: var(--neon-magenta); /* Para o botão ser chamativo */
+    color: var(--bg-dark);
+    border: 2px solid var(--neon-magenta);
+    box-shadow: 0 0 10px var(--neon-magenta);
+}
+.contact-form .neon-effect-btn:hover {
+    background: var(--bg-dark);
+    color: var(--neon-magenta);
+}
+
+
+/* ==================================== */
+/* 22. RESPONSIVIDADE DE CONTATO */
+/* ==================================== */
+
+@media (max-width: 900px) {
+    .contato-layout {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- Continuação do Estilos.css --- */
+
+/* ==================================== */
+/* 23. ESTILOS DAS PÁGINAS LEGAIS (PRIVACIDADE/TERMOS) */
+/* ==================================== */
+
+.legal-text-box {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--neon-blue);
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.2);
+}
+
+.legal-text-box p {
+    margin-bottom: 20px;
+    color: var(--text-medium);
+}
+
+/* Links Legais no Rodapé (Geralmente em um tom mais neutro) */
+.legal-links a {
+    color: var(--text-medium);
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.legal-links a:hover {
+    color: var(--neon-magenta);
+}

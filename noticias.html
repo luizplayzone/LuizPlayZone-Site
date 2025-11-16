@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias Gamer e Reviews de Hardware | LuizPlayZone</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <script src="assets/js/main.js" defer></script>
+
+    <style>
+        /* Estilos específicos para o feed de notícias */
+        #feed-noticias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding-top: 50px;
+        }
+        .noticia-card {
+            background-color: var(--bg-dark-alt);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--neon-blue);
+        }
+        .noticia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.5); /* Efeito neon ao passar o mouse */
+        }
+        .noticia-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .noticia-content {
+            padding: 20px;
+        }
+        .noticia-content h3 {
+            color: var(--neon-magenta);
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .noticia-meta {
+            color: var(--text-medium);
+            font-size: 0.9em;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .noticia-content p {
+            color: var(--text-light);
+            font-size: 1em;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+        .btn-leia-mais {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--neon-blue);
+            color: var(--bg-dark);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .btn-leia-mais:hover {
+            background-color: var(--neon-magenta);
+            color: var(--bg-dark);
+        }
+    </style>
+
+</head>
+<body>
+
+    <header id="header-principal">
+        <div class="container">
+            <h1 class="logo-neon">LuizPlayZone</h1>
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="noticias.html" class="active">Notícias Gamer</a></li>
+                </ul>
+            </nav>
+            <button id="menu-hamburguer">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-pad">
+            <div class="container">
+                <h2 class="title-neon text-center">📡 Feed de Notícias: A Matriz de Conteúdo Gamer</h2>
+                <p class="text-center text-medium">Fique por dentro dos reviews mais quentes, análises de hardware e o drama dos eSports.</p>
+                
+                <div id="feed-noticias">
+
+                    <div class="noticia-card">
+                        <img src="img/noticia-destaque-1.jpg" alt="Cena do jogo Neon City Rumble">
+                        <div class="noticia-content">
+                            <span class="noticia-meta">LANÇAMENTO | 15 de Nov.</span>
+                            <h3>REVIEW: O NOVO RPG CYBERPUNK CHEGA COM GRÁFICOS REVOLUCIONÁRIOS</h3>
+                            <p>O LuizPlayZone destrinchou o lançamento mais aguardado do ano. Será que "Neon City Rumble" é um clássico instantâneo ou apenas um bug gigante?</p>
+                            <a href="artigo-1.html" class="btn-leia-mais neon-effect-btn">LER AGORA</a>
+                        </div>
+                    </div>
+
+                    <div class="noticia-card">
+                        <img src="img/noticia-2.jpg" alt="Time de eSports comemorando a vitória">
+                        <div class="noticia-content">
+                            <span class="noticia-meta">eSPORTS | 14 de Nov.</span>
+                            <h3>TIME BRASILEIRO AVANÇA PARA AS FINAIS MUNDIAIS APÓS VIRADA ÉPICA</h3>
+                            <p>Analisamos o "glitch" que levou a Ciber-Guerrilha a reescrever o código da semi-final. Acompanhe a entrevista exclusiva com o capitão Phantom.</p>
+                            <a href="artigo-2.html" class="btn-leia-mais neon-effect-btn">LER AGORA</a>
+                        </div>
+                    </div>
+                    
+                    <div class="noticia-card">
+                        <img src="img/noticia-3.jpg" alt="Placas de vídeo com iluminação RGB">
+                        <div class="noticia-content">
+                            <span class="noticia-meta">HARDWARE | 10 de Nov.</span>
+                            <h3>UPGRADE CYBERPUNK: AS 3 MELHORES PLACAS DE VÍDEO COM NEON</h3>
+                            <p>Potência e estilo! Guia completo para turbinar sua Battle Station com as GPUs mais brilhantes e potentes do mercado.</p>
+                            <a href="artigo-3.html" class="btn-leia-mais neon-effect-btn">LER AGORA</a>
+                        </div>
+                    </div>
+
+                    <div class="noticia-card placeholder-card">
+                        <img src="img/placeholder.jpg" alt="Em breve, mais notícias">
+                        <div class="noticia-content">
+                            <span class="noticia-meta">EM BREVE</span>
+                            <h3>MAIS CONTEÚDO...</h3>
+                            <p>Nova carga de dados sendo processada. Fique ligado para a próxima atualização de notícias e análises.</p>
+                            <a href="#" class="btn-leia-mais neon-effect-btn" style="background-color: var(--bg-medium); pointer-events: none;">AGUARDE</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer-principal">
+        <div class="container">
+            <div class="contact-sales-section">
+                <h4 class="title-neon">Contato para Vendas e Parcerias</h4>
+                <p>Fale diretamente comigo para propostas comerciais:</p>
+                <a href="https://wa.me/5585996292268" target="_blank" class="btn btn-whatsapp">
+                    <span class="icon-whatsapp"></span> Vendas WhatsApp (85) 99629-2268
+                </a>
+                <a href="mailto:contato@luizplayzone.com" class="btn btn-email">
+                    <span class="icon-email"></span> E-mail: contato@luizplayzone.com
+                </a>
+            </div>
+            <hr class="neon-divider">
+            <div class="social-links">
+                <h4 class="title-neon">Canais Oficiais LuizPlayZone</h4>
+                <a href="#" target="_blank" class="social-icon">YouTube</a>
+                <a href="#" target="_blank" class="social-icon">Twitch</a>
+                <a href="#" target="_blank" class="social-icon">TikTok</a>
+                <a href="#" target="_blank" class="social-icon">Instagram</a>
+            </div>
+            <hr class="neon-divider">
+            <div class="legal-links text-center">
+                <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a>
+            </div>
+            <hr class="neon-divider">
+            <div class="parcerias">
+                <h4 class="title-neon">Parceiros Oficiais</h4>
+                <div class="parceria-logo placeholder">Logo Parceria 1</div>
+                <div class="parceria-logo placeholder">Logo Parceria 2</div>
+            </div>
+            <p class="copyright">
+                &copy; 2025 LuizPlayZone. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btn-back-to-top" title="Voltar ao Topo">^</button>
+
+</body>
+</html>

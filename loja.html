@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Exclusiva LuizPlayZone | Camisetas, Periféricos e Merch Neon</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <script src="assets/js/main.js" defer></script> 
+</head>
+<body>
+
+    <header id="header-principal">
+        <div class="container">
+            <h1 class="logo-neon">LuizPlayZone</h1>
+            
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loja.html" class="active">Loja Exclusiva</a></li>
+                    <li><a href="comunidade.html">Comunidade Gamer</a></li>
+                    <li><a href="eventos.html">Eventos & Sorteios</a></li>
+                    <li><a href="gameplay.html">Clips & Destaques</a></li>
+                    <li><a href="noticias.html">Notícias Gamer</a></li>
+                    <li><a href="canais.html">Canais Oficiais</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="menu-hamburguer">☰</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="loja-header" class="section-pad bg-dark-alt">
+            <div class="container text-center">
+                <h2 class="title-neon">🛍️ Loja Exclusiva de Merchandising</h2>
+                <p>Equipe-se para a Zona de Jogo! Produtos oficiais e colecionáveis da LuizPlayZone.</p>
+            </div>
+        </section>
+
+        <section id="loja-produtos" class="section-pad">
+            <div class="container loja-layout">
+                
+                <aside class="sidebar-filtros bg-dark-alt">
+                    <h4 class="title-section">Filtrar Produtos</h4>
+                    
+                    <div class="filter-group">
+                        <label for="categoria">Categoria</label>
+                        <select id="categoria">
+                            <option value="todos">Todos os Itens</option>
+                            <option value="camisas">Camisas Oficiais</option>
+                            <option value="perifericos">Periféricos Customizados</option>
+                            <option>Colecionáveis</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="preco">Preço Máximo</label>
+                        <input type="range" id="preco" min="50" max="500" value="500">
+                        <span id="preco-valor" class="text-medium">R$ 500</span>
+                    </div>
+
+                    <button class="btn btn-primary mt-3 full-width">APLICAR FILTROS</button>
+                </aside>
+
+                <div class="produtos-grid">
+                    
+                    <div class="produto-card">
+                        <img src="img/item-loja-camisa.jpg" alt="Camisa Neon LZP" class="produto-img">
+                        <h5 class="item-title">Camisa Neon - LZP Edition</h5>
+                        <p class="item-price title-neon">R$ 89,90</p>
+                        <p class="item-desc">Conforto máximo para longas sessões de jogo.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+
+                    <div class="produto-card">
+                        <img src="img/item-loja-mousepad.jpg" alt="Mousepad XL Cyber" class="produto-img">
+                        <h5 class="item-title">Mousepad XL - Cyber Circuit</h5>
+                        <p class="item-price title-neon">R$ 149,90</p>
+                        <p class="item-desc">Precisão e design para a sua bancada.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+
+                    <div class="produto-card">
+                        <img src="img/item-loja-caneca.jpg" alt="Caneca Logo LZP" class="produto-img">
+                        <h5 class="item-title">Caneca Termossensível LuizPlay</h5>
+                        <p class="item-price title-neon">R$ 49,90</p>
+                        <p class="item-desc">Perfeita para energéticos ou café durante as streams.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+                    
+                    <div class="produto-card">
+                        <img src="img/item-loja-capa.jpg" alt="Capa de Celular Neon" class="produto-img">
+                        <h5 class="item-title">Capa de Celular Personalizada</h5>
+                        <p class="item-price title-neon">R$ 65,00</p>
+                        <p class="item-desc">Leve o estilo Cyber da LZP para o seu dia a dia.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+                    
+                    <div class="produto-card">
+                        <img src="img/item-loja-poster.jpg" alt="Poster Assinado" class="produto-img">
+                        <h5 class="item-title">Poster Edição Limitada (Assinado)</h5>
+                        <p class="item-price title-neon">R$ 99,90</p>
+                        <p class="item-desc">Arte exclusiva, perfeita para colecionadores.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+                    
+                    <div class="produto-card">
+                        <img src="img/item-loja-chaveiro.jpg" alt="Chaveiro LZP" class="produto-img">
+                        <h5 class="item-title">Chaveiro Logo Neon</h5>
+                        <p class="item-price title-neon">R$ 29,90</p>
+                        <p class="item-desc">Detalhes pequenos, impacto grande.</p>
+                        <a href="#" class="btn btn-primary">COMPRAR</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer-principal">
+        <div class="container">
+            <div class="contact-sales-section">
+                <h4 class="title-neon">Contato para Vendas e Parcerias</h4>
+                <p>Fale diretamente comigo para propostas comerciais:</p>
+                <a href="https://wa.me/5585996292268" target="_blank" class="btn btn-whatsapp">
+                    <span class="icon-whatsapp"></span> Vendas WhatsApp (85) 99629-2268
+                </a>
+                <a href="mailto:contato@luizplayzone.com" class="btn btn-email">
+                    <span class="icon-email"></span> E-mail: contato@luizplayzone.com
+                </a>
+            </div>
+            <hr class="neon-divider">
+            <div class="social-links">
+                <h4 class="title-neon">Canais Oficiais LuizPlayZone</h4>
+                <a href="#" target="_blank" class="social-icon">YouTube</a>
+                <a href="#" target="_blank" class="social-icon">Twitch</a>
+                <a href="#" target="_blank" class="social-icon">TikTok</a>
+                <a href="#" target="_blank" class="social-icon">Instagram</a>
+            </div>
+            <hr class="neon-divider">
+            <div class="parcerias">
+                <h4 class="title-neon">Parceiros Oficiais</h4>
+                <div class="parceria-logo placeholder">Logo Parceria 1</div>
+                <div class="parceria-logo placeholder">Logo Parceria 2</div>
+            </div>
+            <p class="copyright">
+                &copy; 2025 LuizPlayZone. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btn-back-to-top" title="Voltar ao Topo">^</button>
+
+</body>
+</html>

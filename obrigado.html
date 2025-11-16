@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem Recebida! | LuizPlayZone</title>
+    <link rel="stylesheet" href="assets/css/estilos.css">
+    <script src="assets/js/main.js" defer></script> 
+    
+    <meta name="robots" content="noindex, nofollow">
+
+    <style>
+        #agradecimento-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80vh; /* Ocupa a maior parte da tela */
+            text-align: center;
+        }
+        .agradecimento-box {
+            max-width: 600px;
+            padding: 50px;
+            border-radius: 12px;
+            border: 2px solid var(--neon-magenta);
+            box-shadow: 0 0 25px rgba(255, 0, 144, 0.5);
+            animation: pulse-neon 2s infinite alternate; /* Efeito visual! */
+        }
+        .agradecimento-box h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .agradecimento-box p {
+            font-size: 1.1em;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        /* Animação para o brilho da caixa */
+        @keyframes pulse-neon {
+            0% {
+                box-shadow: 0 0 15px rgba(255, 0, 144, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 0, 144, 0.8), 0 0 5px rgba(255, 255, 255, 0.2);
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <header id="header-principal">
+        <div class="container">
+            <h1 class="logo-neon">LuizPlayZone</h1>
+            
+            <nav id="menu-principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="loja.html">Loja Exclusiva</a></li>
+                    <li><a href="comunidade.html">Comunidade Gamer</a></li>
+                    <li><a href="eventos.html">Eventos & Sorteios</a></li>
+                    <li><a href="gameplay.html">Clips & Destaques</a></li>
+                    <li><a href="noticias.html">Notícias Gamer</a></li>
+                    <li><a href="canais.html">Canais Oficiais</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="menu-hamburguer">☰</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="agradecimento-section" class="section-pad">
+            <div class="container">
+                <div class="agradecimento-box bg-dark-alt">
+                    <h2 class="title-neon">✅ CONEXÃO ESTABELECIDA!</h2>
+                    <p>Sua mensagem foi enviada com sucesso para o sistema central do LuizPlayZone.</p>
+                    <p>Obrigado por entrar em contato! Nossa equipe de suporte ou vendas responderá o mais breve possível. Aguarde nossa resposta em seu e-mail.</p>
+                    
+                    <a href="index.html" class="btn btn-primary neon-effect-btn">VOLTAR À HOME</a>
+                    <a href="noticias.html" class="btn btn-secondary mt-3">LER AS ÚLTIMAS NOTÍCIAS</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="footer-principal">
+        <div class="container">
+            <div class="contact-sales-section">
+                <h4 class="title-neon">Contato para Vendas e Parcerias</h4>
+                <p>Fale diretamente comigo para propostas comerciais:</p>
+                <a href="https://wa.me/5585996292268" target="_blank" class="btn btn-whatsapp">
+                    <span class="icon-whatsapp"></span> Vendas WhatsApp (85) 99629-2268
+                </a>
+                <a href="mailto:contato@luizplayzone.com" class="btn btn-email">
+                    <span class="icon-email"></span> E-mail: contato@luizplayzone.com
+                </a>
+            </div>
+            <hr class="neon-divider">
+            <div class="social-links">
+                <h4 class="title-neon">Canais Oficiais LuizPlayZone</h4>
+                <a href="#" target="_blank" class="social-icon">YouTube</a>
+                <a href="#" target="_blank" class="social-icon">Twitch</a>
+                <a href="#" target="_blank" class="social-icon">TikTok</a>
+                <a href="#" target="_blank" class="social-icon">Instagram</a>
+            </div>
+            <hr class="neon-divider">
+            <div class="legal-links text-center">
+                <a href="privacidade.html">Política de Privacidade</a> | <a href="termos.html">Termos de Uso</a>
+            </div>
+            <hr class="neon-divider">
+            <div class="parcerias">
+                <h4 class="title-neon">Parceiros Oficiais</h4>
+                <div class="parceria-logo placeholder">Logo Parceria 1</div>
+                <div class="parceria-logo placeholder">Logo Parceria 2</div>
+            </div>
+            <p class="copyright">
+                &copy; 2025 LuizPlayZone. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="btn-back-to-top" title="Voltar ao Topo">^</button>
+
+</body>
+</html>
